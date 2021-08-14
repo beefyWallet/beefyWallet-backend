@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "back-end"
+version = "0.1.0"
+description = ""
+authors = ["abdullah-alsawalmeh <abdullahalsawalmeh@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.6"
+djangorestframework = "^3.12.4"
+django-rest-auth = "^0.9.5"
+django-allauth = "^0.45.0"
+djangorestframework-simplejwt = "^4.7.2"
+gunicorn = "^20.1.0"
+whitenoise = "^5.3.0"
+django-environ = "^0.4.5"
+psycopg2-binary = "^2.9.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

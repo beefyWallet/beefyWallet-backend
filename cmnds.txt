@@ -1,0 +1,19 @@
+poetry init -n
+poetry shell
+poetry add django
+poetry add djangorestframework
+poetry add django-rest-auth
+poetry add django-allauth
+poetry add djangorestframework-simplejwt
+poetry export -f requirements.txt -o requirements.txt
+poetry add gunicorn
+poetry add whitenoise
+poetry add django-environ
+poetry add psycopg2-binary
+heroku apps:create beefy-wallet-api
+heroku git:remote -a beefy-wallet-api
+git push heroku main
+heroku stack:set container --app beefy-wallet-api
+heroku stack:set heroku-20
+gunicorn core.wsgi 
+git push heroku backend01
