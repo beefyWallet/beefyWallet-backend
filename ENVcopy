@@ -1,0 +1,12 @@
+SECRET_KEY=sdfj45lkjg
+DEBUG=True
+
+ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+ALLOW_ALL_ORIGINS=True
+
+DATABASE_ENGINE=django.db.backends.postgresql
+DATABASE_NAME=censaguv
+DATABASE_USER=censaguv
+DATABASE_PASSWORD=H2BRUWScwFyv0lFi2z0rKSxJn1A2jU8K
+DATABASE_HOST=kandula.db.elephantsql.com
+DATABASE_PORT=5432
