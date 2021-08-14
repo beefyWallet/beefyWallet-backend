@@ -1,9 +1,13 @@
 from rest_framework import serializers
 from beefy_wallet_api.models import *
 
-class TransactionsSerializer(serializers.ModelSerializer):
-    
+class AdsSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = Ads
+        fields = '__all__'   
 
+
+class TransactionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transactions
         fields = '__all__'
@@ -16,10 +20,7 @@ class MoneySourcesSerializer(serializers.ModelSerializer):
         model = MoneySources
         fields = '__all__'
 
-class AdsSerializer(serializers.ModelSerializer):
-     class Meta:
-        model = Ads
-        fields = '__all__'   
+
 
 
 

@@ -123,5 +123,5 @@ class AdsViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        ads = MoneySources.objects.all()
+        ads = Ads.objects.all()
         return ads
