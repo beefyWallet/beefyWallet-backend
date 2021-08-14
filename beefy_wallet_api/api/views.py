@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from beefy_wallet_api.models import *
-from .serializer import TransactionsSerializer,MoneySourcesSerializer
+from .serializer import TransactionsSerializer,MoneySourcesSerializer,AdsSerializer
 from django.contrib.auth.models import User
 
 
@@ -116,3 +116,12 @@ class MoneySourcesViewSet(viewsets.ModelViewSet):
         serializer = MoneySourcesSerializer(moeny_source)
 
         return Response(serializer.data)
+
+
+class AdsViewSet(viewsets.ModelViewSet):
+    serializer_class = AdsSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        ads = MoneySources.objects.all()
+        return ads

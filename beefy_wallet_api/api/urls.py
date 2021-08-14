@@ -7,6 +7,7 @@ router = DefaultRouter()
 router.register("transactions", TransactionsViewSet, basename="expenses")
 # router.register("incomes", IncomesViewSet, basename="incomes")
 router.register("money_sources", MoneySourcesViewSet, basename="money_sources")
+router.register("ads", AdsViewSet, basename="ads")
 
 
 urlpatterns = [

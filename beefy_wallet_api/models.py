@@ -22,6 +22,16 @@ class Transactions(models.Model):
     def __str__(self):
         return f"{self.money_source} {self.value}"
 
+class Ads(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.TextField()
+    creation_date = models.TimeField()
+    image = models.TextField()
+    ad_type = models.CharField(max_length=50)
+    vendor = models.CharField(max_length=50)
+    def __str__(self):
+        return f"{self.title} {self.vendor}"
+
 # class Incomes(models.Model):
 #     value = models.IntegerField(default=0)
 #     money_source = models.ForeignKey(MoneySources, on_delete=models.CASCADE)

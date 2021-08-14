@@ -16,21 +16,12 @@ class MoneySourcesSerializer(serializers.ModelSerializer):
         model = MoneySources
         fields = '__all__'
 
-
-
-
-        # depth = 1
-# class IncomesSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Incomes
-#         fields = '__all__'
-#         depth = 1
+class AdsSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = Ads
+        fields = '__all__'   
 
 
 
 
-# class StudentsSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Students
-#         fields = ['id', 'name', 'age', 'grade', 'modules']
-#         depth = 1
+
