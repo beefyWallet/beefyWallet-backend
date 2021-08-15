@@ -73,6 +73,9 @@ defusedxml==0.7.1; python_version >= "2.7" and python_full_version < "3.0.0" or 
     --hash=sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69
 django-allauth==0.45.0 \
     --hash=sha256:6d46be0e1480316ccd45476db3aefb39db70e038d2a543112d314b76bb999a4e
+django-cors-headers==3.8.0; python_version >= "3.6" \
+    --hash=sha256:4b8e13bf8d3df50ac4b986bd87085c3073dd56402ede109222ea34a774f9ec1b \
+    --hash=sha256:425c20ceffa42b9ac11b02611eece4ae6c5fef2ff0f039c14c1df20e00c80df8
 django-environ==0.4.5 \
     --hash=sha256:6c9d87660142608f63ec7d5ce5564c49b603ea8ff25da595fd6098f6dc82afde \
     --hash=sha256:c57b3c11ec1f319d9474e3e5a79134f40174b17c7cc024bbb2fad84646b120c4
