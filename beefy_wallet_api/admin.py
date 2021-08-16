@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Transactions)
 admin.site.register(MoneySources)
 admin.site.register(Ads)
+admin.site.register(Quotes)

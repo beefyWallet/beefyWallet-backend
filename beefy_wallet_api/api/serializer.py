@@ -6,6 +6,10 @@ class AdsSerializer(serializers.ModelSerializer):
         model = Ads
         fields = '__all__'   
 
+class QuotesSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = Quotes
+        fields = '__all__'   
 
 class TransactionsSerializer(serializers.ModelSerializer):
     class Meta:

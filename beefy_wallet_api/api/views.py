@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from beefy_wallet_api.models import *
-from .serializer import TransactionsSerializer,MoneySourcesSerializer,AdsSerializer
+from .serializer import TransactionsSerializer,MoneySourcesSerializer,AdsSerializer,QuotesSerializer
 from django.contrib.auth.models import User
 
 
@@ -16,8 +16,12 @@ class TransactionsViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         user = self.request.user
         expenses_incomes_data = request.data
-        new_expense = Transactions.objects.create(money_source=MoneySources.objects.get(name=expenses_incomes_data['money_source'],author__username = user), value=expenses_incomes_data["value"], note=expenses_incomes_data[
-            "note"],creation_date=expenses_incomes_data['creation_date'],transaction_type= expenses_incomes_data['transaction_type'])
+        new_expense = Transactions.objects.create(
+            money_source=MoneySources.objects.get(name=expenses_incomes_data['money_source'], author__username = user),
+            value=expenses_incomes_data["value"],
+            note=expenses_incomes_data["note"],
+            transaction_type= expenses_incomes_data['transaction_type'],
+            category= expenses_incomes_data['category'])
 
         new_expense.save()
 
@@ -37,7 +41,7 @@ class TransactionsViewSet(viewsets.ModelViewSet):
         transaction.value = expenses_incomes_data["value"]
         transaction.transaction_type = expenses_incomes_data["transaction_type"]
         transaction.note = expenses_incomes_data["note"]
-        transaction.creation_date = expenses_incomes_data["creation_date"]
+        transaction.category = expenses_incomes_data["category"]
 
         transaction.save()
 
@@ -59,7 +63,7 @@ class TransactionsViewSet(viewsets.ModelViewSet):
         transaction.value = expenses_incomes_data.get("value", transaction.value)
         transaction.transaction_type = expenses_incomes_data.get("transaction_type", transaction.transaction_type)
         transaction.note = expenses_incomes_data.get("note", transaction.note)
-        transaction.creation_date = expenses_incomes_data.get("creation_date", transaction.creation_date)
+        transaction.category = expenses_incomes_data.get("category", transaction.category)
 
         transaction.save()
 
@@ -125,3 +129,11 @@ class AdsViewSet(viewsets.ModelViewSet):
         user = self.request.user
         ads = Ads.objects.all()
         return ads
+
+
+class QuotesViewSet(viewsets.ModelViewSet):
+    serializer_class = QuotesSerializer
+
+    def get_queryset(self):
+        quotes = Quotes.objects.all()
+        return quotes
