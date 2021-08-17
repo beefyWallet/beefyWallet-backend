@@ -4,12 +4,14 @@ from beefy_wallet_api.models import *
 class AdsSerializer(serializers.ModelSerializer):
      class Meta:
         model = Ads
-        fields = '__all__'   
+        fields = '__all__' 
+        depth = 1  
 
 class QuotesSerializer(serializers.ModelSerializer):
      class Meta:
         model = Quotes
-        fields = '__all__'   
+        fields = '__all__'  
+        depth = 1 
 
 class TransactionsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,6 +25,7 @@ class MoneySourcesSerializer(serializers.ModelSerializer):
     class Meta:
         model = MoneySources
         fields = '__all__'
+        depth = 1
 
 
 
