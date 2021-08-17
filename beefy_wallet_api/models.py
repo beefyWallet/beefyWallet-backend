@@ -8,6 +8,10 @@ class MoneySources(models.Model):
     amount = models.IntegerField(default=0)
     creation_date = models.DateTimeField(auto_now_add=True)
     modify_date = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['-creation_date']
+
     def __str__(self):
         return f"{self.author} {self.name} {self.amount}"
 
@@ -35,16 +39,21 @@ class Transactions(models.Model):
     category = models.CharField(max_length=50,choices=categories)
     creation_date = models.DateTimeField(auto_now_add=True)
     modify_date = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ['-creation_date']
     def __str__(self):
         return f"{self.money_source} {self.value}"
 
 class Ads(models.Model):
+    read = models.BooleanField(default=False)
     title = models.CharField(max_length=50)
     text = models.TextField()
-    creation_date = models.TimeField()
+    creation_date = models.DateTimeField(auto_now_add=True)
     image = models.TextField()
     ad_type = models.CharField(max_length=50)
     vendor = models.CharField(max_length=50)
+    class Meta:
+        ordering = ['-creation_date']
     def __str__(self):
         return f"{self.title} {self.vendor}"
 

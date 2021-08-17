@@ -16,4 +16,4 @@ git push heroku main
 heroku stack:set container --app beefy-wallet-api
 heroku stack:set heroku-20
 gunicorn core.wsgi 
-git push heroku backend01
+git push heroku master
