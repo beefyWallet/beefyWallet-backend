@@ -41,7 +41,8 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = tuple(env.list("ALLOWED_HOSTS"))
+# ALLOWED_HOSTS = tuple(env.list("ALLOWED_HOSTS"))
+ALLOWED_HOSTS=['*']
 
 
 # Application definition
@@ -197,6 +198,9 @@ STATICFILES_DIRS = [
 # CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = [
+        'http://localhost:3000',
+]
 # CORS_ALLOWED_ORIGINS = [
 #     "https://example.com",
 #     "https://sub.example.com",

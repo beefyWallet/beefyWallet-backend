@@ -71,6 +71,14 @@ class TransactionsViewSet(viewsets.ModelViewSet):
 
         return Response(serializer.data)
 
+#     def destroy(self, request, *args, **kwargs):
+#         logedin_user = request.user
+#         car = self.get_object()
+#         car.delete()
+#         response_message = {"message": "Not Allowed"}
+# 
+#         return Response(response_message)
+
 
 class MoneySourcesViewSet(viewsets.ModelViewSet):
     serializer_class = MoneySourcesSerializer
